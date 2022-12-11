@@ -5,8 +5,7 @@ pipeline {
     stages {
         stage('Unittest') {
             steps {
-                sh 'pwd'
-                sh 'python -m unittest discover ./application/'
+                sh './run_tests.sh'
             }
         }
     }
