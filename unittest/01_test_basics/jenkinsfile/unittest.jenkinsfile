@@ -5,6 +5,8 @@ pipeline {
     stages {
         stage('Unittest') {
             steps {
+                sh 'pwd'
+                sh 'ls'
                 sh 'chmod +x ./run_tests.sh'
                 sh './run_tests.sh'
             }
