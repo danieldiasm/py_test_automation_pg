@@ -24,7 +24,7 @@ The unittest lib comes with the python interpreter, so nothing else should be ne
 To run this tests you should have your terminal inside the unittest directory:
 
 ```
-.../unittest$ python -m unittest discover ./01_test_basics/
+.../unittest$ python -m unittest discover ./application/
 ```
 
 Then you should get:
