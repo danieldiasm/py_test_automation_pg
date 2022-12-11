@@ -3,7 +3,7 @@
 from unittest import TestCase
 from unittest.mock import MagicMock
 
-import sample_basic.app as app
+import application.app as app
 
 
 class TestWithMock(TestCase):
