@@ -5,9 +5,8 @@ pipeline {
     stages {
         stage('Unittest') {
             steps {
-                sh 'cd unittest/01_test_basics/'
-                sh 'chmod +x ./run_tests.sh'
-                sh './run_tests.sh'
+                sh 'chmod +x ./unittest/01_test_basics/run_tests.sh'
+                sh 'cd ./unittest/01_test_basics/ && ./run_tests.sh'
             }
         }
     }
