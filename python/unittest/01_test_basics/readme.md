@@ -2,22 +2,27 @@
 
 This is an example of a simple application with simple unit tests for it.
 
-Note:
-The unittest lib comes with the python interpreter, so nothing else should be needed.
+Unittest is a library that comes build-in on Python, so you'll be able to do
+some testing only having Python installed on the system. 
 
-## About the tests
- 1 - App
- This is a dummy application to build tests on it.
+## What you can find in here
+ 1 - The Application
+ This is a dummy application with few simple functions for you to read or practice 
+ writing unit tests for it.
 
- 2 - Unit Tests
- Inside this basics there are only unittests, no integration or system tests.
+ 2 - Tests
+ Inside this there are only simple unit tests, no integration or system tests.
+ Unit test, ideally is a task that the software developer should be doing. 
 
- 3 - Tests
- This contains the practice test files. Here you can find all sort of tests, from simple
- assertions to mock tests.
+ 4 - Test Resources Examples
+    a - Set-Up
+    b - Teardown
+    c - Fixtures
 
- 4 - Jenkinsfile
- There is a Jenkinsfile for you to use it on a pipeline!
+ 5 - Jenkinsfile
+ There is a Jenkinsfile for you to use it on a pipeline, its job is to execute the
+ shell script called "run_tests.sh" and execute the tests.
+
 
 ## How to run tests of this directory.
 
