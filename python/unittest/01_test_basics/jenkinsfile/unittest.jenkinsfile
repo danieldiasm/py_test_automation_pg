@@ -1,0 +1,13 @@
+// this pipeline only serves unittest test cases
+pipeline {
+    agent any
+
+    stages {
+        stage('Unittest') {
+            steps {
+                sh 'chmod +x ./python/unittest/01_test_basics/run_tests.sh'
+                sh 'cd ./python/unittest/01_test_basics/ && ./run_tests.sh'
+            }
+        }
+    }
+}
