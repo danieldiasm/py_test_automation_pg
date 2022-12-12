@@ -24,6 +24,8 @@ thought on it.
 
 ### Python
 - unittest: This contains all sort of tests using only the unittest library.
+    - 01 Test Basics: This contains some simple basic unittest and simple mock usage.
+    - 02 Blog Application: This is a terminal Blog Application that has Unit, Integration and System tests.
 - pytest: Here you can find tests made using PyTest only.
 - robot framework: Yes, the infamous Robot Framework using python.
 ### Go Lang
