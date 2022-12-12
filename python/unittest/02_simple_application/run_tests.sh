@@ -20,6 +20,7 @@ prepare() {
 
 run_test_type() {
     `python -m unittest discover -s ./tests/$1/ -p "*_test.py"`
+    deactivate
 }
 
 if [[ $TESTS == "unit" ]]; then
@@ -42,7 +43,7 @@ elif [[ $TESTS == "all" ]]; then
     echo "Running unit tests..."
     prepare
     run_test_type
-    
+
 else
     echo -e "Use one of the arguments:
      unit        - run all the unit tests.
