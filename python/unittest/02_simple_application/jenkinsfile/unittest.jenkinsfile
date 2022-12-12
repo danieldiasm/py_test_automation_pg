@@ -6,7 +6,7 @@ pipeline {
         stage('Unit Tests') {
             steps {
                 sh 'chmod +x ./python/unittest/02_simple_application/run_tests.sh'
-                sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh'
+                sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh all'
             }
         }
     }
