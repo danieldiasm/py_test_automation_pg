@@ -12,22 +12,37 @@ activate_venv() {
     source ./testenv/bin/activate
 }
 
-if [[ $TESTS == "unit" ]]; then
-    echo "Running unit tests..."
+prepare() {
     create_venv
     activate_venv
     cd ./blog
-    python -m unittest discover -s ./tests/unit/ -p "*_test.py"
+}
+
+run_test_type() {
+    `python -m unittest discover -s ./tests/$1/ -p "*_test.py"`
+}
+
+if [[ $TESTS == "unit" ]]; then
+    echo "Running unit tests..."
+    prepare
+    run_test_type "unit"
 
 elif [[ $TESTS == "integration" ]]; then
-    echo "integration"
-    create_venv
+    echo "Running integration tests..."
+    prepare
+    run_test_type "integration"
+
 elif [[ $TESTS == "system" ]]; then
-    echo "system"
-    create_venv
+    echo "Running system tests..."
+    prepare
+    run_test_type "system"
+
 elif [[ $TESTS == "all" ]]; then
     echo "everything"
-    create_venv
+    echo "Running unit tests..."
+    prepare
+    run_test_type
+    
 else
     echo -e "Use one of the arguments:
      unit        - run all the unit tests.
