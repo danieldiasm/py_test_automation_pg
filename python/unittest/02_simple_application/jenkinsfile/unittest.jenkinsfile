@@ -24,6 +24,8 @@ pipeline {
         stage('Print Params') {
             steps {
                 sh 'echo "${params.UNIT}"'
+                sh 'echo "${params.INTEGRATION}"'
+                sh 'echo "${params.SYSTEM}"'
             }
         }
 
