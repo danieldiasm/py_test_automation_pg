@@ -46,6 +46,7 @@ pipeline {
             }
             steps {
                 sh 'echo "Integration Tests"'
+                sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh integration'
             }
 
         }
@@ -57,6 +58,7 @@ pipeline {
             }
             steps {
                 sh 'echo "System Tests"'
+                sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh system'
             }
         }
     }
