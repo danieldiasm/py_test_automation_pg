@@ -2,12 +2,11 @@
 pipeline {
     agent any
 
-    parameters{
+    parameters {
         booleanParam 
-        (
-            name: 'UNIT_TEST',
-            defaultValue: false,
-            description: 'Run Unit Tests'
+        ( name: 'UNIT_TEST',
+        defaultValue: false,
+        description: 'Run Unit Tests'
         )
 
         booleanParam
@@ -27,9 +26,12 @@ pipeline {
 
     stages {
         stage('Unit Tests') {
+            when{
+                expression { params.UNIT_TEST == true }
+            }
             steps {
                 sh 'chmod +x ./python/unittest/02_simple_application/run_tests.sh'
-                sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh all'
+                sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh unit'
             }
         }
 
