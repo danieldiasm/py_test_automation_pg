@@ -3,23 +3,11 @@ pipeline {
     agent any
 
     parameters {
-        booleanParam(
-            name: 'UNIT-TEST',
-            defaultValue: false,
-            description: 'Run Unit Tests'
-        )
+        booleanParam(name: 'UNIT', defaultValue: false, description: 'Run Unit Tests')
 
-        booleanParam(
-            name: 'INTEGRATION-TEST',
-            defaultValue: false,
-            description: 'Run Integration Tests'
-        )
+        booleanParam(name: 'INTEGRATION-TEST', defaultValue: false, description: 'Run Integration Tests')
 
-        booleanParam(
-            name: 'SYSTEM-TEST',
-            defaultValue: false,
-            description: 'Run System Tests'
-        )
+        booleanParam(name: 'SYSTEM-TEST', defaultValue: false, description: 'Run System Tests')
     }
 
     stages {
