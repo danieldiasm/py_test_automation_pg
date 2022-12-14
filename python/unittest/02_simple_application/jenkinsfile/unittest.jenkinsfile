@@ -4,21 +4,22 @@ pipeline {
 
     parameters {
         booleanParam 
-        ( name: 'UNIT_TEST',
-        defaultValue: false,
-        description: 'Run Unit Tests'
+        (
+            name: 'UNIT-TEST',
+            defaultValue: false,
+            description: 'Run Unit Tests'
         )
 
         booleanParam
         (
-            name: 'INTEGRATION_TEST',
+            name: 'INTEGRATION-TEST',
             defaultValue: false,
             description: 'Run Integration Tests'
         )
 
         booleanParam 
         (
-            name: 'SYSTEM_TEST',
+            name: 'SYSTEM-TEST',
             defaultValue: false,
             description: 'Run System Tests'
         )
