@@ -3,17 +3,26 @@ pipeline {
     agent any
 
     parameters {
-        booleanParam(name: 'UNIT', defaultValue: false, description: 'Run Unit Tests')
+        booleanParam( name: 'UNIT',
+        defaultValue: false,
+        description: 'Run Unit Tests'
+        )
 
-        booleanParam(name: 'INTEGRATION-TEST', defaultValue: false, description: 'Run Integration Tests')
+        booleanParam( name: 'INTEGRATION',
+        defaultValue: false,
+        description: 'Run Integration Tests'
+        )
 
-        booleanParam(name: 'SYSTEM-TEST', defaultValue: false, description: 'Run System Tests')
+        booleanParam( name: 'SYSTEM', 
+        defaultValue: false,
+        description: 'Run System Tests'
+        )
     }
 
     stages {
         stage('Unit Tests') {
             when{
-                expression { params.UNIT_TEST == true }
+                expression { params.UNIT_TEST == 'true' }
             }
             steps {
                 sh 'chmod +x ./python/unittest/02_simple_application/run_tests.sh'
@@ -24,7 +33,7 @@ pipeline {
         stage('Integration Tests') 
         {
             when{
-                expression { params.INTEGRATION_TEST == true }
+                expression { params.INTEGRATION_TEST == 'true' }
             }
             steps {
                 sh 'echo "Integration Tests"'
@@ -35,7 +44,7 @@ pipeline {
         stage('System Tests')
         {
             when{
-                expression { params.SYSTEM_TEST == true }
+                expression { params.SYSTEM_TEST == 'true' }
             }
             steps {
                 sh 'echo "System Tests"'
