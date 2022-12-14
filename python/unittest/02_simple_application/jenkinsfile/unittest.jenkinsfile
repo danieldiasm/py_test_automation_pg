@@ -20,9 +20,16 @@ pipeline {
     }
 
     stages {
+
+        stage('Print Params') {
+            steps {
+                sh 'echo "${params.UNIT}"'
+            }
+        }
+
         stage('Unit Tests') {
             when{
-                expression { params.UNIT_TEST == 'true' }
+                expression { params.UNIT == true }
             }
             steps {
                 sh 'chmod +x ./python/unittest/02_simple_application/run_tests.sh'
@@ -33,7 +40,7 @@ pipeline {
         stage('Integration Tests') 
         {
             when{
-                expression { params.INTEGRATION_TEST == 'true' }
+                expression { params.INTEGRATION == true }
             }
             steps {
                 sh 'echo "Integration Tests"'
@@ -44,7 +51,7 @@ pipeline {
         stage('System Tests')
         {
             when{
-                expression { params.SYSTEM_TEST == 'true' }
+                expression { params.SYSTEM == true }
             }
             steps {
                 sh 'echo "System Tests"'
