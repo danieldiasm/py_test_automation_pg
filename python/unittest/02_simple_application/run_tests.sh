@@ -33,7 +33,7 @@ if [[ $TESTS == "prepare" ]]; then
     echo "Preparing test environment..."
     prepare
 
-if [[ $TESTS == "unit" ]]; then
+elif [[ $TESTS == "unit" ]]; then
     echo "Running unit tests..."
     run_test_type "unit"
 
