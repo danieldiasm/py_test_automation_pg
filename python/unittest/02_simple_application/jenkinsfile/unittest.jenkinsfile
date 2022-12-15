@@ -21,11 +21,10 @@ pipeline {
 
     stages {
 
-        stage('Print Params') {
+        stage('Preparing Test Env') {
             steps {
-                echo "UNIT: ${params.UNIT}"
-                echo "INTE: ${params.UNIT}"
-                echo "SYST: ${params.UNIT}"
+                sh 'chmod +x ./python/unittest/02_simple_application/run_tests.sh'
+                sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh prepare'
             }
         }
 
@@ -34,7 +33,7 @@ pipeline {
                 expression { params.UNIT == true }
             }
             steps {
-                sh 'chmod +x ./python/unittest/02_simple_application/run_tests.sh'
+                echo "Running Unit Tests"
                 sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh unit'
             }
         }
@@ -45,7 +44,7 @@ pipeline {
                 expression { params.INTEGRATION == true }
             }
             steps {
-                sh 'echo "Integration Tests"'
+                echo "Running Integration Tests"
                 sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh integration'
             }
 
@@ -57,7 +56,7 @@ pipeline {
                 expression { params.SYSTEM == true }
             }
             steps {
-                sh 'echo "System Tests"'
+                echo "Running System Tests"
                 sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh system'
             }
         }
