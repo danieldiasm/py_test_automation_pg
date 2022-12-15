@@ -1,4 +1,6 @@
 #!/bin/bash
+# Author: Daniel Z. Dias de Moraes
+# Script for preparing the test env and running
 
 TESTS=$1
 
@@ -9,7 +11,7 @@ create_venv() {
 
 install_reqs() {
     echo " - Installing Requirements."
-    `pip3 install -r requirements.txt`
+    pip3 install -r requirements.txt
 }
 
 activate_venv() {
