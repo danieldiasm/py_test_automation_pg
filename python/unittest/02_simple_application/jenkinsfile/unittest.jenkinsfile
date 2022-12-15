@@ -21,11 +21,12 @@ pipeline {
 
     stages {
 
-        stage('Print Params') {
+        stage('Prepare Python V-ENV') {
             steps {
-                echo "UNIT: ${params.UNIT}"
-                echo "INTE: ${params.UNIT}"
-                echo "SYST: ${params.UNIT}"
+                echo'Creating a Virtual Environment'
+                sh 'python3.9 -m venv ./python/unittest/02_simple_application/testenv'
+                echo'Activating Virtual Environment'
+                sh 'source ./python/unittest/02_simple_application/testenv/bin/activate'
             }
         }
 
@@ -34,8 +35,8 @@ pipeline {
                 expression { params.UNIT == true }
             }
             steps {
-                sh 'chmod +x ./python/unittest/02_simple_application/run_tests.sh'
-                sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh unit'
+                sh 'python -m unittest discover -s ./python/unittest/02_simple_application/tests/unit/ -p "*_test.py"'
+                //sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh unit'
             }
         }
 
