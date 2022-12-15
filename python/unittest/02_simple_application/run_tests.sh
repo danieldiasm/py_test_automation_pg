@@ -7,35 +7,42 @@ create_venv() {
     `python3.9 -m venv ./testenv`
 }
 
+install_reqs() {
+    echo " - Installing Requirements."
+    `pip3 install -r requirements.txt`
+}
+
 activate_venv() {
     echo " - Activating the venv."
     source ./testenv/bin/activate
 }
 
-prepare() {
-    create_venv
+run_test_type() {
     activate_venv
     cd ./blog
-}
-
-run_test_type() {
     `python -m unittest discover -s ./tests/$1/ -p "*_test.py"`
     deactivate
 }
 
+prepare() {
+    create_venv
+    install_reqs
+}
+
+if [[ $TESTS == "prepare" ]]; then
+    echo "Preparing test environment..."
+    prepare
+
 if [[ $TESTS == "unit" ]]; then
     echo "Running unit tests..."
-    prepare
     run_test_type "unit"
 
 elif [[ $TESTS == "integration" ]]; then
     echo "Running integration tests..."
-    prepare
     run_test_type "integration"
 
 elif [[ $TESTS == "system" ]]; then
     echo "Running system tests..."
-    prepare
     run_test_type "system"
 
 elif [[ $TESTS == "all" ]]; then
@@ -46,6 +53,7 @@ elif [[ $TESTS == "all" ]]; then
 
 else
     echo -e "Use one of the arguments:
+     prepare     - create virtual env and install reqs
      unit        - run all the unit tests.
      integration - run all the integration tests
      system      - run all the system tests
