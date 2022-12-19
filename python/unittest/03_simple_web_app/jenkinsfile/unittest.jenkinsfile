@@ -1,0 +1,64 @@
+// this pipeline only serves unittest test cases
+pipeline {
+    agent any
+
+    parameters {
+        booleanParam( name: 'UNIT',
+        defaultValue: false,
+        description: 'Run Unit Tests'
+        )
+
+        booleanParam( name: 'INTEGRATION',
+        defaultValue: false,
+        description: 'Run Integration Tests'
+        )
+
+        booleanParam( name: 'SYSTEM', 
+        defaultValue: false,
+        description: 'Run System Tests'
+        )
+    }
+
+    stages {
+
+        stage('Preparing Test Env') {
+            steps {
+                sh 'chmod +x ./python/unittest/02_simple_application/run_tests.sh'
+                sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh prepare'
+            }
+        }
+
+        stage('Unit Tests') {
+            when{
+                expression { params.UNIT == true }
+            }
+            steps {
+                echo "Running Unit Tests"
+                sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh unit'
+            }
+        }
+
+        stage('Integration Tests') 
+        {
+            when{
+                expression { params.INTEGRATION == true }
+            }
+            steps {
+                echo "Running Integration Tests"
+                sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh integration'
+            }
+
+        }
+
+        stage('System Tests')
+        {
+            when{
+                expression { params.SYSTEM == true }
+            }
+            steps {
+                echo "Running System Tests"
+                sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh system'
+            }
+        }
+    }
+}
