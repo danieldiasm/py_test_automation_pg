@@ -1,4 +1,4 @@
-# Unittest - Basic
+# Unittest - Basics
 
 This is an example of a simple application with simple unit tests for it.
 
@@ -7,19 +7,24 @@ some testing only having Python installed on the system.
 
 ## What you can find in here
  1 - The Application
- This is a dummy application with few simple functions for you to read or practice 
- writing unit tests for it.
+ This is a dummy application with three simple functions for practice of
+ writing **unit** tests for it.
 
  2 - Tests
- Inside this there are only simple unit tests, no integration or system tests.
- Unit test, ideally is a task that the software developer should be doing. 
+ Inside the tests directory there are some simple tests.
 
- 4 - Test Resources Examples
-    a - Set-Up
-    b - Teardown
-    c - Fixtures
+ Unit test, ideally is a task that the software developer should be doing, 
+ not the test team. 
 
- 5 - Jenkinsfile
+ Integration test in another hand depends on the organization/development team.
+
+3 - Tests Description
+   - test_app.py
+      - This file contains one unit test and one purposefully **accidental** integration test. Read more in the file.
+   - test_mock.py
+      - This file contains how to fix the accidental integration test on the previous file, using **Mocking** or **Dependency Injection** technique.
+
+4 - Jenkinsfile
  There is a Jenkinsfile for you to use it on a pipeline, its job is to execute the
  shell script called "run_tests.sh" and execute the tests.
 
@@ -29,7 +34,7 @@ some testing only having Python installed on the system.
 To run this tests you should have your terminal inside the unittest directory:
 
 ```
-.../unittest$ python -m unittest discover ./application/
+.../unittest$ python3 -m unittest discover ./application/
 ```
 
 Then you should get:

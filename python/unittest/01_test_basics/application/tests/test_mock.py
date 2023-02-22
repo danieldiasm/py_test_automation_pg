@@ -1,4 +1,9 @@
-
+# In order to isolate the "app.add_one" and "app.remove_one" to have this as 
+# Unit Tests, the ideal is to do some sort of dependency injection, one way to
+# do so is using "Mocking", and Mock the "app.ordenate_list" function.
+# Pay attention to the import and construction:
+# from unittest.mock import MagicMock
+# app.ordenate_list = MagicMock()
 
 from unittest import TestCase
 from unittest.mock import MagicMock

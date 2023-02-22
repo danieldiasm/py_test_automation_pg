@@ -1,3 +1,6 @@
+# The tests on this file should be Unit Tests, although the second test
+# might be considered an integration test, because "add_one" utilizes 
+# "ordenate list" internally to get its job done.
 from unittest import TestCase
 
 import application.app as app
