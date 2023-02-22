@@ -1,3 +1,8 @@
+/* 
+This is just a template for creating test pipelines.
+Not very sophisticated, but serve as starting point.
+*/
+
 pipeline {
     agent any
     parameters {

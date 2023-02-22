@@ -1,4 +1,3 @@
-// this pipeline only serves unittest test cases
 pipeline {
     agent any
 

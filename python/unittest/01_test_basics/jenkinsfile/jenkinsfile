@@ -1,4 +1,4 @@
-// this pipeline only serves unittest test cases
+// This pipeline serves only unittest test cases
 pipeline {
     agent any
 
