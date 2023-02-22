@@ -1,3 +1,6 @@
+# File: test_app.py
+# Author: Daniel Z. Dias de Moraes
+# Last update: 22 Feb 2023
 
 from random import randint
 

@@ -1,9 +1,18 @@
+# File: test_app.py
+# Author: Daniel Z. Dias de Moraes
+# Last update: 22 Feb 2023
+#
 # In order to isolate the "app.add_one" and "app.remove_one" to have this as 
 # Unit Tests, the ideal is to do some sort of dependency injection, one way to
 # do so is using "Mocking", and Mock the "app.ordenate_list" function.
+#
 # Pay attention to the import and construction:
+#
 # from unittest.mock import MagicMock
 # app.ordenate_list = MagicMock()
+#
+# Mock will "simulate" the actions of app.ordenate_list, becoming possible
+# to isolate the code of the "app.add_one" and testing it as a unit.
 
 from unittest import TestCase
 from unittest.mock import MagicMock

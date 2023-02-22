@@ -46,7 +46,18 @@ Ran 4 tests in 0.001s
 OK
 ```
 
-# Where to read more about the library unittest
+<br>
+<br>
+
+## Where to read more about the library unittest
 
 A reliable source of information: https://devguide.python.org/testing/run-write-tests/.
 Unittest Doc page: https://docs.python.org/3/library/unittest.html
+
+<br>
+<br>
+<br>
+
+###### File: readme.md
+###### Author: Daniel Z. Dias de Moraes
+###### Last update: 22 Feb 2023

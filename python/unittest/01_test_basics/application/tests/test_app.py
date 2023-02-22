@@ -1,6 +1,13 @@
+# File: test_app.py
+# Author: Daniel Z. Dias de Moraes
+# Last update: 22 Feb 2023
+#
 # The tests on this file should be Unit Tests, although the second test
-# might be considered an integration test, because "add_one" utilizes 
-# "ordenate list" internally to get its job done.
+# can be considered an integration test, because "add_one" make use of 
+# "app.ordenate list" internally to get its job done.
+#
+# Basically that is the erro done in purpose mentioned on the Readme.
+# The soultion is on the test_mock.py file
 from unittest import TestCase
 
 import application.app as app
