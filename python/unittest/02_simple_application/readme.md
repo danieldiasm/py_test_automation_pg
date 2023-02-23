@@ -1,28 +1,33 @@
-# Unittest - Basic
+# Unittest - Essentials
 
-This is an example of a simple application with simple unit tests for it.
+### **ATENTION! - This is under construction**
+
+On this Directory there will be more essential stuff of testing _for a developer_,
+but not so basic as the 01_test_basics.
+
+You'll be able to find:
+
+- Unit Tests
+- Integration Tests
+
+This comprises the most important skills for a developer, since those tests normally
+would be the developer's responsibility to make.
+
+The system test will be having its own section on Directory 03. It depends on the
+company if the system test is being made by the test team or development team. So I'll leave this sepparate for the sake of organizing each subject.
+
+#### About Unittest:
 
 Unittest is a library that comes build-in on Python, so you'll be able to do
-some testing only having Python installed on the system. 
+some testing only having Python installed on the system.
 
-## What you can find in here
- 1 - The Application
- This is a dummy application with few simple functions for you to read or practice 
- writing unit tests for it.
+### What you can find in here:
 
- 2 - Tests
- Inside this there are only simple unit tests, no integration or system tests.
- Unit test, ideally is a task that the software developer should be doing. 
+1 - The Application
 
- 4 - Test Resources Examples
-    a - Set-Up
-    b - Teardown
-    c - Fixtures
+2 - Tests
 
- 5 - Jenkinsfile
- There is a Jenkinsfile for you to use it on a pipeline, its job is to execute the
- shell script called "run_tests.sh" and execute the tests.
-
+3 - Jenkinsfile
 
 ## How to run tests of this directory.
 
@@ -33,6 +38,7 @@ To run this tests you should have your terminal inside the unittest directory:
 ```
 
 Then you should get:
+
 ```
 ....
 ----------------------------------------------------------------------
@@ -41,7 +47,7 @@ Ran 4 tests in 0.001s
 OK
 ```
 
-# Where to read more about the library unittest
+## Where to read more about the library unittest
 
 A reliable source of information: https://devguide.python.org/testing/run-write-tests/.
 Unittest Doc page: https://docs.python.org/3/library/unittest.html
