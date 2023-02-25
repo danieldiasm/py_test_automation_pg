@@ -32,11 +32,11 @@ some testing only having Python installed on the system.
 
 ### What you can find in here:
 
-1 - The Application
-a - Tests
-2 - Jenkinsfile
-3 - Requirements File
-4 - Script that runs the tests for you (takes arguments)
+1. The Application
+    1. Tests
+2. Jenkinsfile
+3. Requirements File
+4. Script that runs the tests for you (takes arguments)
 
 <br>
 
