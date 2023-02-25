@@ -7,12 +7,15 @@ You'll be able to find:
 
 - Unit Tests
 - Integration Tests
+- System Tests
 
 This comprises the most important basic skills for a developer, since those tests usually would be the developer's responsibility to make.
 
-The system test will be having its own section on Directory 03. It depends on the company or team if the system test is made by the test team or development team.
+It depends on the company or team if the system test is made by the test team or development team.
 
-This is an application a bit more complex than the first one, since it has to offer the opportunity of integration testing.
+The system test will be having a better focus on Directory 03. 
+
+This is an application a bit more complex than the first one, since it has to offer the opportunity of integration and system testing.
 
 #### What is Integration Testing?
 

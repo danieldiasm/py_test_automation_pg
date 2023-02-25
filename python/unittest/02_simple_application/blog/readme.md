@@ -34,12 +34,12 @@ The Blog Application is a simple application of a Blog that runs on Terminal.
     - JSON: returns a json format of a instance of the object
 
 ### How it works?
-    When executed the program asks you what you want to do, waiting for a key to be pressed and select an option.
+  When executed the program asks you what you want to do, waiting for a key to be pressed and select an option.
 
-    The program is deeply flawed and will fail in many manual tests.
+  The focus here is to offer a way to explore unit and integration tests, system tests will work for normal test cases.
 
-    The focus here is to offer a way to explore unit and integration tests, other tests will mostly fail.
+  The program is deeply flawed and will fail in many manual tests, also this is not ready to be submitted to edge cases, those will mostly fail easily finding flaws on the code (like if you ask to read a blog before adding one).
 
 ### Credits
 
-    This application were developed based on the same presented by Jose Salvatierra on Udemy Course of Python Testing with Unittest.
+  This application were developed based on the same presented by Jose Salvatierra on Udemy Course of Python Testing with Unittest.
