@@ -13,7 +13,7 @@ This comprises the most important basic skills for a developer, since those test
 
 It depends on the company or team if the system test is made by the test team or development team.
 
-The system test will be having a better focus on Directory 03. 
+The system test will be having a better focus on Directory 03.
 
 This is an application a bit more complex than the first one, since it has to offer the opportunity of integration and system testing.
 
@@ -36,16 +36,26 @@ some testing only having Python installed on the system.
 a - Tests
 2 - Jenkinsfile
 3 - Requirements File
-4 - Script that runs the tests manually (takes arguments)
+4 - Script that runs the tests for you (takes arguments)
 
 <br>
 
-## How to run tests of this directory.
+## How to run tests of this directory USING SCRIPT.
+
+```
+.../02_simple_application$ ./run_tests.sh [unit/integration/system]
+```
+
+The argument "prepare" makes a venv to run the tests, it is the ideal way to be done before running tests.
+
+The argument "all" makes the venv and then run all the tests on it, deactivating removing it at the end, this is my favourite.
+
+## How to run tests of this directory MANUALLY.
 
 To run this tests you should have your terminal inside the unittest directory:
 
 ```
-.../unittest$ python -m unittest discover ./application/
+.../02_simple_application$ python -m unittest discover ./blog/
 ```
 
 Then you should get:
@@ -53,7 +63,7 @@ Then you should get:
 ```
 ....
 ----------------------------------------------------------------------
-Ran 4 tests in 0.001s
+Ran 19 tests in 0.010s
 
 OK
 ```
