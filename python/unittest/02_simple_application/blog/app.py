@@ -1,6 +1,6 @@
 from blog import Blog
 
-MENU_PROMPT = 'Enter "c" to create a blog, "l" to list blogs, "r" to read one, "p" to create a post, or "q" to quit'
+MENU_PROMPT = 'Enter "c" to create a blog, "l" to list blogs, "r" to read one, "p" to create a post, or "q" to quit\n'
 POST_TEMPLATE = '''
     ---{}---
     
@@ -8,15 +8,11 @@ POST_TEMPLATE = '''
     
     '''
 
-blogs = dict()  # blog_name : Blog object
+# Blogs are stored in RAM during runtime only.
+blogs = dict()
 
 
 def menu():
-    # Show user available blogs
-    # Let the user make a choice
-    # Do something with the choice
-    # Eventually exit
-
     print_blogs()
     selection = input(MENU_PROMPT)
     while selection != 'q':
@@ -32,7 +28,6 @@ def menu():
 
 
 def print_blogs():
-    # Print the available Blogs
     for key, blog in blogs.items():
         print('- {}'.format(blog))
 
@@ -47,7 +42,6 @@ def print_post(post):
 
 
 def ask_create_blog():
-    # Ask user for their name and blog title.
     new_user_name = input('Insert your name: ')
     new_blog_title = input('Insert the blog title: ')
     blogs[new_blog_title] = Blog(new_blog_title, new_user_name)
@@ -55,13 +49,11 @@ def ask_create_blog():
 
 
 def ask_read_blog():
-    # Ask for a blog title and print posts.
     blog_title = input('Insert the title of a blog to read: ')
     print_posts(blogs[blog_title])
 
 
 def ask_create_post():
-    # Ask for a blog title, post title and post content.
     blog_title = input('Insert the blog title to insert the post: ')
     new_post_title = input('Insert the post title: ')
     new_post_content = input('Insert content:')

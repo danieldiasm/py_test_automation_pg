@@ -49,10 +49,18 @@ elif [[ $TESTS == "system" ]]; then
 
 elif [[ $TESTS == "all" ]]; then
     echo "everything"
-    echo "Running unit tests..."
+    echo "Running all types of tests..."
     prepare
     run_test_type
-
+    echo "Removing venv..."
+    rm -R ../testenv
+    RES=$?
+    if [[ $RES == 1 ]]; then
+        echo "An error has ocurred removing venv folder!"
+        exit 1;
+    else
+        echo "Done!"
+    fi
 else
     echo -e "Use one of the arguments:
      prepare     - create virtual env and install reqs
