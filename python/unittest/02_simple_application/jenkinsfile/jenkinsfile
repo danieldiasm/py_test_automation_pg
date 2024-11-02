@@ -21,9 +21,11 @@ pipeline {
     stages {
 
         stage('Start-Up') {
-            sh 'traflights.py 1'
-            sleep(3)
-            sh 'traflights.py 2'
+            steps {
+                sh 'traflights.py 1'
+                sleep(3)
+                sh 'traflights.py 2'
+            }
         }
 
         stage('Preparing Test Env') {
