@@ -64,17 +64,17 @@ pipeline {
             }
             steps {
                 echo "Running System Tests"
-                sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh system'
+                sh 'failcd ./python/unittest/02_simple_application/ && ./run_tests.sh system'
             }
         }
     }
 
     post{
         success {
-            sh 'traflights.py 1; sleep 5; traflights.py 0'
+            sh 'traflights.py 1'
         }
         failure {
-            sh 'traflights.py 4; sleep 5; traflights.py 0'
+            sh 'traflights.py 4'
         }
     }
 }
