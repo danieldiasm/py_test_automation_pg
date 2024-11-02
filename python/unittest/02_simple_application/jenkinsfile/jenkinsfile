@@ -64,7 +64,7 @@ pipeline {
             }
             steps {
                 echo "Running System Tests"
-                sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh system'
+                sh '123cd ./python/unittest/02_simple_application/ && ./run_tests.sh system'
             }
         }
     }
