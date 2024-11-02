@@ -20,6 +20,12 @@ pipeline {
 
     stages {
 
+        stage('Start-Up') {
+            sh 'traflights.py 1'
+            sleep(3)
+            sh 'traflights.py 2'
+        }
+
         stage('Preparing Test Env') {
             steps {
                 sh 'chmod +x ./python/unittest/02_simple_application/run_tests.sh'
@@ -58,6 +64,15 @@ pipeline {
                 echo "Running System Tests"
                 sh 'cd ./python/unittest/02_simple_application/ && ./run_tests.sh system'
             }
+        }
+    }
+
+    post{
+        success {
+            sh 'traflights.py 1; sleep 5; traflights.py 0'
+        }
+        failure {
+            sh 'traflights.py 4; sleep 5; traflights.py 0'
         }
     }
 }
